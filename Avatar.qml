@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Effects
 import qs.Commons
+import qs.Commons as Commons
 import qs.Ui
 import "Model.js" as Model
 
@@ -49,7 +50,7 @@ Item {
     Text {
       anchors.centerIn: parent
       text: Model.initials(root.personName)
-      color: root.panel ? root.panel.ink : Color.foreground
+      color: root.panel ? root.panel.ink : Commons.Color.foreground
       font.family: root.panel ? root.panel.fontFamily : Style.font.family
       font.pixelSize: Math.round(root.size * root.initialsScale)
     }

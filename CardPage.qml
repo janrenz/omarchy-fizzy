@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Effects
 import qs.Commons
+import qs.Commons as Commons
 import qs.Ui
 import "Model.js" as Model
 
@@ -322,7 +323,7 @@ Item {
                 anchors.centerIn: parent
                 visible: stepRow.modelData.completed
                 text: "✓"
-                color: Color.background
+                color: Commons.Color.background
                 font.pixelSize: Style.space(9)
                 font.bold: true
               }

@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 import qs.Commons
+import qs.Commons as Commons
 
 // No `import qs.Ui` here, deliberately: the shell's Ui module also exports a
 // type called Panel, and importing it would shadow this plugin's Panel.qml —
@@ -53,9 +54,9 @@ ShellRoot {
 
     readonly property string position: "top"
     readonly property int barSize: 1
-    readonly property color foreground: Color.foreground
-    readonly property color barForeground: Color.bar.text
-    readonly property color urgent: Color.bar.active
+    readonly property color foreground: Commons.Color.foreground
+    readonly property color barForeground: Commons.Color.bar.text
+    readonly property color urgent: Commons.Color.bar.active
     readonly property string fontFamily: Style.font.family
     readonly property var clickTargets: []
     property var activePopout: null

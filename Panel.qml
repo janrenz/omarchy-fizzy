@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 import qs.Commons
+import qs.Commons as Commons
 import qs.Ui
 import "Model.js" as Model
 
@@ -70,8 +71,8 @@ Panel {
   // lightTheme only picks which variant of Fizzy's own column palette to use;
   // every shell color below is a live binding to theme tokens.
   readonly property bool lightTheme:
-    0.2126 * Color.background.r + 0.7152 * Color.background.g + 0.0722 * Color.background.b > 0.5
-  readonly property color ink: root.bar ? root.bar.foreground : Color.foreground
+    0.2126 * Commons.Color.background.r + 0.7152 * Commons.Color.background.g + 0.0722 * Commons.Color.background.b > 0.5
+  readonly property color ink: root.bar ? root.bar.foreground : Commons.Color.foreground
   // One color for the whole plugin — the panel's accent and the bar's tint are
   // the same answer, so the widget and the panel it opens never disagree about
   // what this plugin's color is.
@@ -82,8 +83,8 @@ Panel {
   // and messages already use up there.
   readonly property string tintColor: String(setting("tintColor", "bar active"))
   readonly property color accent: Model.themeColor(
-    tintColor, root.bar ? root.bar.urgent : Color.urgent, Color.accent, Color.urgent)
-  readonly property color urgent: root.bar ? root.bar.urgent : Color.urgent
+    tintColor, root.bar ? root.bar.urgent : Commons.Color.urgent, Commons.Color.accent, Commons.Color.urgent)
+  readonly property color urgent: root.bar ? root.bar.urgent : Commons.Color.urgent
   readonly property color dim: Qt.darker(ink, 1.5)
   readonly property color hairline: Util.alpha(ink, 0.12)
   readonly property string fontFamily: root.bar ? root.bar.fontFamily : Style.font.family
@@ -1313,7 +1314,7 @@ Panel {
         anchors.margins: -Style.space(4)
         z: 20
         radius: Style.cornerRadius
-        color: Util.alpha(Color.popups.background, 0.97)
+        color: Util.alpha(Commons.Color.popups.background, 0.97)
         opacity: root.helpVisible ? 1 : 0
         visible: opacity > 0.01
         scale: root.helpVisible ? 1 : 0.98

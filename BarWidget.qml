@@ -1,5 +1,6 @@
 import QtQuick
 import qs.Commons
+import qs.Commons as Commons
 import qs.Ui
 import "Model.js" as Model
 
@@ -63,7 +64,7 @@ BarWidget {
   // bar and the panel it opens are one color.
   readonly property string tintColor: String(setting("tintColor", "bar active"))
   readonly property color tintPaint: Model.themeColor(
-    tintColor, root.bar ? root.bar.urgent : Color.urgent, Color.accent, Color.urgent)
+    tintColor, root.bar ? root.bar.urgent : Commons.Color.urgent, Commons.Color.accent, Commons.Color.urgent)
 
   readonly property string barIcon: String(setting("barIcon", "bubbles"))
   readonly property bool brandIcon: barIcon === "logo in color"

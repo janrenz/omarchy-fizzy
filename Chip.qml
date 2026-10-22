@@ -1,5 +1,6 @@
 import QtQuick
 import qs.Commons
+import qs.Commons as Commons
 
 // Pill chip used for filters, movers, tags, and people. Fizzy column colors
 // arrive via `dot`; `active` renders the shell's selected state, so themes
@@ -13,8 +14,8 @@ Rectangle {
   property int count: -1
   property bool active: false
   property bool dimmed: false
-  property color accent: Color.accent
-  property color foreground: Color.foreground
+  property color accent: Commons.Color.accent
+  property color foreground: Commons.Color.foreground
   property string fontFamily: Style.font.family
 
   signal clicked()

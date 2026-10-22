@@ -1,5 +1,6 @@
 import QtQuick
 import qs.Commons
+import qs.Commons as Commons
 
 // The widget's mark, in one of two shapes.
 //
@@ -14,7 +15,7 @@ import qs.Commons
 Item {
   id: root
 
-  property color tint: Color.accent
+  property color tint: Commons.Color.accent
   property real iconSize: Style.font.display
   property bool animate: false
 

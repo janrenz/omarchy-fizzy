@@ -1,5 +1,6 @@
 import QtQuick
 import qs.Commons
+import qs.Commons as Commons
 import qs.Ui
 import "Model.js" as Model
 
@@ -31,8 +32,8 @@ CursorSurface {
   readonly property real seatSize: Style.space(20)
 
   hasCursor: panel && panel.page === "board" && panel.cardCursor === rowIndex
-  foreground: panel ? panel.ink : Color.foreground
-  accent: panel ? panel.accent : Color.accent
+  foreground: panel ? panel.ink : Commons.Color.foreground
+  accent: panel ? panel.accent : Commons.Color.accent
   implicitHeight: Math.ceil(body.implicitHeight) + Style.space(16)
 
   // Cards read as cards: keep a resting surface under the cursor states.
@@ -127,7 +128,7 @@ CursorSurface {
         // The stack overlaps by design; the ring is what keeps three seats
         // legible as three.
         borderWidth: 1
-        borderColor: Color.popups ? Color.popups.background : Color.background
+        borderColor: Commons.Color.popups ? Commons.Color.popups.background : Commons.Color.background
       }
     }
 
@@ -140,7 +141,7 @@ CursorSurface {
       radius: width / 2
       color: Style.normalFillFor(root.panel.ink, root.panel.accent)
       border.width: 1
-      border.color: Color.popups ? Color.popups.background : Color.background
+      border.color: Commons.Color.popups ? Commons.Color.popups.background : Commons.Color.background
 
       Text {
         anchors.centerIn: parent
